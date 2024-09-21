@@ -72,7 +72,7 @@ export const useChatTest = ({
 
   const CustomChatContainer = useMemoizedFn(() =>
     appDetail.type === AppTypeEnum.plugin ? (
-      <Box h={'100%'} p={3}>
+      <Box p={5}>
         <PluginRunBox
           pluginInputs={pluginInputs}
           variablesForm={variablesForm}

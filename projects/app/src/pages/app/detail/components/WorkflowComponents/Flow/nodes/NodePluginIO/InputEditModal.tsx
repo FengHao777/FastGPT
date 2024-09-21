@@ -409,12 +409,14 @@ const FieldEditModal = ({
             {/* value type */}
             <Flex alignItems={'center'}>
               <FormLabel flex={'0 0 100px'} fontWeight={'medium'}>
-                {t('common:core.module.Data Type')}
+                {t('workflow:value_type')}
               </FormLabel>
               {showValueTypeSelect ? (
                 <Box flex={1}>
                   <MySelect<WorkflowIOValueTypeEnum>
-                    list={valueTypeSelectList}
+                    list={valueTypeSelectList.filter(
+                      (item) => item.value !== WorkflowIOValueTypeEnum.arrayAny
+                    )}
                     value={valueType}
                     onchange={(e) => {
                       setValue('valueType', e);
